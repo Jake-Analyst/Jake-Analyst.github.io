@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jake | Data Analytics Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-gray-800 antialiased">
+
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+    <div class="max-w-7xl mx-auto flex items-center justify-between h-16 px-4 md:px-8">
+      <!-- Brand -->
+      <h1 class="text-xl md:text-2xl font-extrabold leading-tight">
+        Jake <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">— Data Analyst</span>
+      </h1>
+
+      <!-- Hamburger button (mobile) -->
+      <button id="navbarToggle" aria-label="Toggle navigation" aria-controls="navbarMenu" aria-expanded="false"
+        class="md:hidden flex flex-col justify-between w-6 h-6">
+        <span class="block h-0.5 w-full bg-gray-800 transition-transform"></span>
+        <span class="block h-0.5 w-full bg-gray-800 transition-opacity"></span>
+        <span class="block h-0.5 w-full bg-gray-800 transition-transform"></span>
+      </button>
+
+      <!-- Menu -->
+      <nav id="navbarMenu"
+        class="hidden md:flex md:items-center md:space-x-6 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent border-b md:border-none md:shadow-none">
+        <ul class="flex flex-col md:flex-row md:space-x-6 items-center">
+
+          <!-- Project Button -->
+          <li>
+            <a href="https://github.com/Jake-Analyst?tab=repositories"
+              class="block py-2 px-4 mt-2 md:mt-0 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 text-center md:text-left transition-all duration-300">
+              Projects
+            </a>
+          </li>
+
+          <!-- About Button -->
+          <li>
+            <a href="https://github.com/yourusername/about-repo"
+              class="block py-2 px-4 mt-2 md:mt-0 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 text-center md:text-left transition-all duration-300">
+              About
+            </a>
+          </li>
+
+          <!-- Contact Button -->
+          <li class="relative">
+            <button id="contactButton"
+              class="block py-2 px-4 mt-2 md:mt-0 bg-indigo-600 text-white font-bold rounded-lg text-center md:text-left transition-all duration-300 animate-heartbeat">
+              Contact
+            </button>
+
+            <!-- Dropdown -->
+            <div id="contactDropdown"
+              class="hidden absolute right-0 mt-2 w-48 bg-white/60 backdrop-blur-md border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+              <a href="https://wa.me/254793752735" target="_blank" rel="noopener noreferrer"
+
+                class="block px-4 py-2 hover:bg-green-100 text-gray-700"><img src="icons/whatsapp-svg.svg" class="w-5 h-5 inline-block mr-2" alt="WhatsApp icon"> WhatsApp</a>
+              <a href="tel:+254793752735" class="block px-4 py-2 hover:bg-green-100 text-gray-700"><img src="icons/phone-dial-svg.svg" class="w-5 h-5 inline-block mr-2" alt="Phone icon">Call</a>
+              <a href="https://github.com/yourusername" target="_blank  rel="noopener noreferrer
+                class="block px-4 py-2 hover:bg-green-100 text-gray-700"><img src="icons/github-svg.svg" class="w-5 h-5 inline-block mr-2" alt="Github icon" GitHub> </a>
+              <a href="https://facebook.com/yourusername" target="_blank"
+                class="block px-4 py-2 hover:bg-green-100 text-gray-700">📘 Facebook</a>
+              <a href="https://linkedin.com/in/yourusername" target="_blank"
+                class="block px-4 py-2 hover:bg-green-100 text-gray-700">💼 LinkedIn</a>
+            </div>
+          </li>
+
+          <!-- Sign Up -->
+          <li>
+            <a href="https://github.com/yourusername"
+              class="block py-2 px-4 mt-2 md:mt-0 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-700 text-center md:text-left transition-all duration-300">
+              Sign Up
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <style>
+    /* Heartbeat animation, 1s beat cycle */
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(1.1);
+      }
+      50% {
+        transform: scale(1);
+      }
+      75% {
+        transform: scale(1.05);
+      }
+    }
+
+    .animate-heartbeat {
+      animation: heartbeat 1s infinite ease-in-out;
+    }
+  </style>
+
+  <script>
+    // Mobile menu toggle
+    const navbarToggle = document.getElementById('navbarToggle');
+    const navbarMenu = document.getElementById('navbarMenu');
+    navbarToggle.addEventListener('click', () => {
+      navbarMenu.classList.toggle('hidden');
+      const spans = navbarToggle.querySelectorAll('span');
+      spans[0].classList.toggle('rotate-45', !navbarMenu.classList.contains('hidden'));
+      spans[1].classList.toggle('opacity-0', !navbarMenu.classList.contains('hidden'));
+      spans[2].classList.toggle('-rotate-45', !navbarMenu.classList.contains('hidden'));
+    });
+
+    // Contact dropdown + pulse behavior
+    const contactButton = document.getElementById('contactButton');
+    const contactDropdown = document.getElementById('contactDropdown');
+    let isOpen = false;
+
+    contactButton.addEventListener('click', () => {
+      isOpen = !isOpen;
+      contactDropdown.classList.toggle('hidden', !isOpen);
+
+      if (isOpen) {
+        contactButton.classList.remove('animate-heartbeat'); // stop pulsing when dropdown is open
+      } else {
+        contactButton.classList.add('animate-heartbeat'); // resume pulsing when closed
+      }
+    });
+
+    // Click outside to close dropdown
+    document.addEventListener('click', (e) => {
+      if (!contactButton.contains(e.target) && !contactDropdown.contains(e.target)) {
+        contactDropdown.classList.add('hidden');
+        contactButton.classList.add('animate-heartbeat');
+        isOpen = false;
+      }
+    });
+  </script>
+
+</body>
+
+
+
+  <!-- Hero Section -->
+  <div class="relative h-screen bg-[url('images/hero-image-2.jpg')] bg-cover bg-center opacity-0 translate-y-20 transition-all duration-1000 ease-out" data-section>
+    <!-- Dark Overlay (no blur needed on overlay) -->
+    <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+
+    <!-- Content -->
+    <section class="relative z-10 py-12 px-6 text-white">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8">
+        <!-- Text Content -->
+        <div class="flex-1 text-center md:text-left">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">
+            Transforming Data into Actionable Insights
+          </h1>
+          <p class="text-lg md:text-base mb-6 max-w-md mx-auto md:mx-0 leading-relaxed">
+            Hi, I'm Jake and I specialize in creating actionable insights through data analytics, SQL, and interactive dashboards. 
+            My portfolio demonstrates projects that drive business efficiency, uncover trends, and inform strategic decision-making.
+          </p>
+          <a href="https://github.com/Jake-Analyst"
+             class="inline-block bg-blue-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors">
+            View My Portfolio
+          </a>
+        </div>
+
+        <!-- Image -->
+        <div class="flex-1 flex justify-center md:justify-end">
+          <img src="images/passport.jpg"
+               alt="A sample dashboard representing data insights"
+               class="w-full max-w-md aspect-square rounded-full object-cover shadow-2xl">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="container mx-auto px-6 py-10 bg-gray-200/30 backdrop-blur-lg opacity-0 translate-y-20 transition-all duration-1000 ease-out" data-section>
+    <h2 class="text-2xl font-bold mb-6">Skills</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="p-4 bg-white/10 rounded-full border border-white/10 shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div class="font-semibold text-lg text-center text-blue-500">SQL</div>
+      </div>
+      <div class="p-4 bg-white/10 rounded-full border border-white/10 shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div class="font-semibold text-lg text-center text-purple-500">Power BI</div>
+      </div>
+      <div class="p-4 bg-white/10 rounded-full border border-white/10 shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div class="font-semibold text-lg text-center text-green-500">Statistics</div>
+      </div>
+      <div class="p-4 bg-white/10 rounded-full border border-white/10 shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div class="font-semibold text-lg text-center text-orange-500">Excel</div>
+      </div>
+      <div class="p-4 bg-white/10 rounded-full border border-white/10 shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div class="font-semibold text-lg text-center text-red-500">Data Visualization</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="container mx-auto px-6 py-12 opacity-0 translate-y-20 transition-all duration-1000 ease-out" data-section>
+    <h2 class="text-2xl font-bold mb-6">Projects</h2>
+
+
+    <article class="p-6 rounded-2xl bg-white/10 border-2 border-gray-200 shadow-xl relative overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+  <div class="relative z-10">
+    <h3 class="font-bold text-lg text-black">Data Cleaning and Visualization (Excel)</h3>
+    <p class="text-gray-900 mt-3">
+      Skilled in cleaning messy datasets, removing duplicates, handling missing values, and creating clear visualizations (charts, pivot tables, dashboards) in Excel to support decision-making.
+    </p>
+
+    <div class="mt-4 flex items-center justify-between">
+      <span class="text-xs px-2 py-1 rounded-full bg-gray-100 text-black">Excel</span>
+      <a href="https://github.com/Jake-Analyst/Personal-Finance-Dashboard-Excel-" class="text-sm text-cyan-700 font-medium group-hover:text-black transition-colors">View →</a>
+    </div>
+
+    <div class="mt-4 flex items-center justify-between">
+      <a id="review-btn"
+         href="https://github.com/Jake-Analyst/Personal-Finance-Dashboard-Excel-/discussions/new?category=general"
+         target="_blank"
+         class="mt-2 inline-block bg-purple-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md hover:bg-purple-700 transition-all duration-300">
+         💬Please Leave a Review
+      </a>
+    </div>
+  </div>
+</article>
+
+<script>
+  // Make sure we safely select this specific button
+  const reviewBtn = document.querySelector('#review-btn');
+
+  // Add a smooth pulse animation every 1 second
+  setInterval(() => {
+    reviewBtn.classList.toggle('scale-110');   // gently enlarges
+    reviewBtn.classList.toggle('shadow-lg');   // gives a glowing shadow
+    reviewBtn.classList.toggle('bg-purple-700'); // darkens briefly for pulse
+  }, 1000);
+</script>
+
+ 
+     <article class="p-6 rounded-2xl bg-white/10 border-2 border-gray-200 shadow-lg relative overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+  <div class="relative z-10">
+    <h3 class="font-bold text-lg text-black">Data Extracton, Transformation and Analysis(SQL)</h3>
+    <p class="text-gray-900 mt-3">Skilled in writing complex queries, joins, and aggregations to uncover insights.</p>
+
+    <div class="mt-4 flex items-center justify-between">
+      <span class="text-xs px-2 py-1 rounded-full bg-gray-100 text-black">SQL</span>
+      <a href="https://github.com/Jake-Analyst/HR-Analytics-SQL-Project" class="text-sm text-cyan-700 font-medium group-hover:text-black transition-colors">View →</a>
+    </div>
+
+    <div class="mt-4 flex items-center justify-between">
+      <a class="review-btn mt-2 inline-block bg-purple-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md hover:bg-purple-700 transition-transform duration-500 transform"
+         href="https://github.com/Jake-Analyst/HR-Analytics-SQL-Project/discussions/new?category=general"
+         target="_blank">
+         💬Please Leave a Review
+      </a>
+    </div>
+  </div>
+</article>
+
+<script>
+  // Make sure we safely select this specific button
+  const reviewBtn = document.querySelector('#review-btn');
+
+  // Add a smooth pulse animation every 1 second
+  setInterval(() => {
+    reviewBtn.classList.toggle('scale-110');   // gently enlarges
+    reviewBtn.classList.toggle('shadow-lg');   // gives a glowing shadow
+    reviewBtn.classList.toggle('bg-purple-700'); // darkens briefly for pulse
+  }, 1000);
+</script>
+
+
+      <!-- Power BI Project Card -->
+<article class="p-6 rounded-2xl bg-white/10 border-2 border-gray-200 shadow-lg relative overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+  <div class="relative z-10">
+    <h3 class="font-bold text-lg text-black">Finance Dashboard (Power BI)</h3>
+    <p class="text-gray-900 mt-3">End-to-end ETL, KPI monitoring, and drill-down visualizations.</p>
+
+    <div class="mt-4 flex items-center justify-between">
+      <span class="text-xs px-2 py-1 rounded-full bg-gray-100 text-black">Power BI</span>
+      <a href="https://github.com/Jake-Analyst/Sales-Performance-Dashboard-" 
+         class="text-sm text-cyan-700 font-medium group-hover:text-black transition-colors">View →</a>
+    </div>
+
+    <!-- Review Button -->
+    <div class="mt-4 flex items-center justify-between">
+      <a class="review-btn mt-2 inline-block bg-purple-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md hover:bg-purple-700 transition-transform duration-500 transform"
+         href="https://github.com/Jake-Analyst/Sales-Performance-Dashboard-/discussions/new?category=general"
+         target="_blank">
+         💬 Please Leave a Review
+      </a>
+    </div>
+  </div>
+</article>
+
+<!-- Pulse Animation Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const reviewBtns = document.querySelectorAll('.review-btn');
+
+    reviewBtns.forEach(btn => {
+      setInterval(() => {
+        btn.classList.toggle('scale-110');  // gently grow
+        btn.classList.toggle('shadow-lg');  // glow effect
+        btn.classList.toggle('bg-purple-700'); // darker pulse color
+      }, 1000); // every 1 second
+    });
+  });
+</script>
+
+
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("opacity-100", "translate-y-0");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll("[data-section]").forEach(section => {
+          observer.observe(section);
+        });
+      });
+    </script>
+  </section>
+  <!-- Testimonials Section -->
+<section id="testimonials" class="container mx-auto px-6 py-16 bg-white/5 backdrop-blur-lg border-t border-white/10 opacity-0 translate-y-20 transition-all duration-1000 ease-out" data-section>
+  <h2 class="text-3xl font-bold mb-10 text-center text-gray-900">What People Say 💬</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Testimonial 1 -->
+    <div class="p-6 rounded-2xl bg-white/70 border border-gray-300 shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <p class="text-gray-800 italic mb-4">“Jake delivered an amazing dashboard that revealed insights we didn’t even know we had. Truly a professional analyst!”</p>
+      <div class="font-semibold text-gray-900">— Brian M., Project Manager</div>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="p-6 rounded-2xl bg-white/70 border border-gray-300 shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <p class="text-gray-800 italic mb-4">“His SQL and visualization skills made our reporting seamless. Highly recommend working with Jake.”</p>
+      <div class="font-semibold text-gray-900">— Sarah K., Data Lead</div>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="p-6 rounded-2xl bg-white/70 border border-gray-300 shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <p class="text-gray-800 italic mb-4">“Jake turned our raw data into clean, actionable visuals. Fast, reliable, and skilled.”</p>
+      <div class="font-semibold text-gray-900">— David O., Business Analyst</div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Contact -->
+  <footer id="contact" class="container mx-auto px-6 py-12 opacity-0 translate-y-20 transition-all duration-1000 ease-out" data-section>
+  <div class="p-8 rounded-2xl bg-gradient-to-r from-white/10 to-white/20 border border-white/20 backdrop-blur-md shadow-xl">
+    <h3 class="text-2xl font-bold text-gray-900">Let's build something useful 📈</h3>
+    <p class="text-gray-700 mt-2">Available for freelance & collaborations. I respond fast.</p>
+
+    <!-- Social Links -->
+    <div class="mt-4 flex flex-wrap items-center gap-4 text-gray-800">
+      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener noreferrer" class="p-3 rounded-lg bg-white/40 hover:bg-white/60">LinkedIn</a>
+      <a href="https://github.com/Jake-Analyst" target="_blank" rel="noopener noreferrer" class="p-3 rounded-lg bg-white/40 hover:bg-white/60">GitHub</a>
+      <a href="mailto:jmuuo7990@gmail.com" class="p-3 rounded-lg bg-white/40 hover:bg-white/60">Email</a>
+      <a href="tel:+254793752735" class="p-3 rounded-lg bg-white/40 hover:bg-white/60">Phone</a>
+      <a href="https://wa.me/254793752735" target="_blank" rel="noopener noreferrer" class="p-3 rounded-lg bg-white/40 hover:bg-white/60">WhatsApp</a>
+    </div>
+
+    <!-- Contact Form -->
+    <form
+  action="https://formspree.io/f/mwprgdrp"
+  method="POST"
+  class="mt-6 grid gap-3 max-w-md text-gray-900"
+>
+  <input
+    class="bg-white/70 border border-gray-400 rounded-md p-3 placeholder-gray-600"
+    type="text"
+    name="name"
+    placeholder="Your name"
+    required
+  />
+  <input
+    class="bg-white/70 border border-gray-400 rounded-md p-3 placeholder-gray-600"
+    type="email"
+    name="email"
+    placeholder="Your email"
+    required
+  />
+  <textarea
+    class="bg-white/70 border border-gray-400 rounded-md p-3 placeholder-gray-600"
+    name="message"
+    rows="4"
+    placeholder="Message"
+    required
+  ></textarea>
+
+  <button
+    type="submit"
+    class="py-3 rounded-md font-semibold bg-gradient-to-r from-cyan-400 to-purple-500 text-black hover:scale-105 transition-transform duration-300"
+  >
+    Send message
+  </button>
+</form>
+
+
+<script>
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      alert("✅ Message sent successfully!");
+      form.reset();
+    } else {
+      alert("❌ Message failed to send. Check your Formspree setup.");
+    }
+  });
+</script>
+
+
+    <div class="mt-6 text-sm text-gray-800">© 2025 Jake — Data Analytics Portfolio</div>
+  </div>
+
+  <!-- EmailJS Script (Optional: remove if using only Formspree) -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+   
+  </script>
+</footer>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById('contactForm');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+
+        try {
+          const response = await fetch('http://localhost:3000/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          const result = await response.json();
+          alert(result.message || 'Something went wrong');
+        } catch (error) {
+          console.error('Error:', error);
+          alert('Failed to send message');
+        }
+      });
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll("[data-section]").forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+</body>
+</html>
