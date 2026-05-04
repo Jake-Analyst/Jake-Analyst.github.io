@@ -45,6 +45,9 @@
       max-width: 95vw;
       max-height: 95vh;
     }
+    video {
+      background-color: #f3f4f6;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800 antialiased">
@@ -78,8 +81,6 @@
         videoElement.webkitRequestFullscreen();
       } else if (videoElement.msRequestFullscreen) {
         videoElement.msRequestFullscreen();
-      } else {
-        window.openImage(videoElement.querySelector('source').src);
       }
     };
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
@@ -226,14 +227,15 @@
         </div>
       </div>
 
-      <!-- JAKE Financial Management System Card -->
+      <!-- JAKE Financial Management System Card (FIXED VIDEO) -->
       <div class="bg-white rounded-2xl shadow-lg overflow-hidden border flex flex-col h-full">
         <div class="h-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600"></div>
         <div class="h-48 bg-gray-100 flex items-center justify-center p-2">
-          <video class="w-full h-full object-cover rounded" controls muted preload="metadata" poster="/images/faith dashboard.jpeg">
+          <video class="w-full h-full object-cover rounded" controls muted autoplay playsinline preload="auto" poster="/images/faith%20dashboard.jpeg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <source src="/images/faiths%20dashboard.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
+          <div style="display: none; align-items: center; justify-content: center; width: 100%; height: 100%; background: #f3f4f6; color: #6b7280; font-size: 0.875rem;">⚠️ Video failed to load</div>
         </div>
         <div class="p-5 flex flex-col flex-grow">
           <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full w-fit">💹 Excel + Power Query | Python + Flask + AI</span>
@@ -331,7 +333,7 @@
     </div>
   </section>
 
-  <!-- JAKE Financial Management System Detailed Section -->
+  <!-- JAKE Financial Management System Detailed Section (FIXED VIDEO) -->
   <section id="project-finance" class="bg-gradient-to-br from-indigo-50 to-blue-50 py-20 opacity-0 translate-y-20 transition-all duration-1000 ease-out" data-section>
     <div class="container mx-auto px-6">
       <a href="#projects" class="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-semibold mb-8 smooth-scroll">← Back to Projects</a>
@@ -341,14 +343,15 @@
           <p class="text-blue-100">AI‑Powered Financial Analytics, Budgeting & Automated Reporting</p>
         </div>
         <div class="p-8 flex flex-col gap-6">
-          <div class="cursor-pointer rounded-xl overflow-hidden shadow-lg" onclick="openImage('/images/faith dashboard.jpeg')">
-            <img src="/images/faith dashboard.jpeg" alt="Dashboard Preview" class="w-full zoomable">
+          <div class="cursor-pointer rounded-xl overflow-hidden shadow-lg" onclick="openImage('/images/faith%20dashboard.jpeg')">
+            <img src="/images/faith%20dashboard.jpeg" alt="Dashboard Preview" class="w-full zoomable">
           </div>
           <div class="video-container rounded-xl overflow-hidden shadow-lg" onclick="toggleVideoFullscreen(this.querySelector('video'))">
-            <video class="w-full" controls muted preload="metadata" poster="/images/faith dashboard.jpeg">
+            <video class="w-full" controls muted autoplay playsinline preload="auto" poster="/images/faith%20dashboard.jpeg" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
               <source src="/images/faiths%20dashboard.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
+            <div style="display: none; text-align: center; padding: 2rem; background: #f3f4f6; color: #6b7280;">⚠️ Video failed to load. Check console for details.</div>
           </div>
           <div class="space-y-4 mt-4">
             <p class="text-gray-700 leading-relaxed">
