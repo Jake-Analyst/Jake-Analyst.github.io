@@ -150,7 +150,7 @@
   </script>
 
   <!-- Hero Section -->
-  <div class="relative h-screen bg-[url('.images/hero-image-2.jpg')] bg-cover bg-center opacity-0 translate-y-20 transition-all duration-1000 ease-out" data-section>
+  <div class="relative h-screen bg-[url('hero-image-2.jpg')] bg-cover bg-center opacity-0 translate-y-20 transition-all duration-1000 ease-out" data-section>
     <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
     <section class="relative z-10 py-12 px-6 text-white">
       <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8">
@@ -161,7 +161,7 @@
         </div>
         <div class="flex-1 flex justify-center md:justify-end">
           <img 
-            src=".images/fixed passport image.png" 
+            src="fixed%20passport%20image.png" 
             alt="Profile" 
             loading="lazy"
             class="w-full max-w-md aspect-square rounded-full object-cover shadow-2xl zoomable"
@@ -173,7 +173,7 @@
 
   <script>
     document.getElementById('viewCvBtn').addEventListener('click', function() {
-      const pdfPath = ".images/Jake%20CV.pdf";
+      const pdfPath = "Jake%20CV.pdf";
       window.open(pdfPath, '_blank');
     });
   </script>
@@ -202,14 +202,14 @@
         <div class="h-2 bg-gradient-to-r from-green-400 to-emerald-500"></div>
         <div class="h-48 bg-green-50 flex items-center justify-center gap-1 p-2">
           <img 
-            src=".images/Messy%20Spreadsheet.png" 
+            src="Messy%20Spreadsheet.png" 
             alt="Messy Spreadsheet Before"
             loading="lazy"
             class="w-1/2 h-full object-cover zoomable rounded" 
             onclick="openImage(this.src)"
             onload="this.setAttribute('data-loaded', 'true')">
           <img 
-            src=".images/Cleaned%20Spreadsheet.png" 
+            src="Cleaned%20Spreadsheet.png" 
             alt="Cleaned Spreadsheet After"
             loading="lazy"
             class="w-1/2 h-full object-cover zoomable rounded" 
@@ -229,7 +229,7 @@
         <div class="h-2 bg-gradient-to-r from-blue-400 to-indigo-500"></div>
         <div class="h-48 bg-blue-50 flex items-center justify-center">
           <img 
-            src=".images/sql-dashboard.png" 
+            src="SQL_tables.png" 
             alt="SQL Dashboard"
             loading="lazy"
             class="object-contain h-full zoomable" 
@@ -250,7 +250,7 @@
         <div class="h-2 bg-gradient-to-r from-orange-400 to-red-500"></div>
         <div class="h-48 bg-orange-50 flex items-center justify-center">
           <img 
-            src=".images/hr-attrition-dashboard.png" 
+            src="HR-Attrition.png" 
             alt="HR Attrition Dashboard"
             loading="lazy"
             class="object-contain h-full zoomable" 
@@ -271,7 +271,7 @@
         <div class="h-2 bg-gradient-to-r from-purple-400 to-pink-500"></div>
         <div class="h-48 bg-purple-50 flex items-center justify-center">
           <img 
-            src=".images/powerbi-dashboard.png" 
+            src="Sales-Dashboard.png" 
             alt="Power BI Sales Dashboard"
             loading="lazy"
             class="object-contain h-full zoomable" 
@@ -284,29 +284,6 @@
           <h3 class="text-xl font-bold mt-2">Sales Performance Dashboard</h3>
           <p class="text-gray-500 text-xs mt-2 flex-grow">An interactive Power BI dashboard combining multiple Excel sources, cleaned with Power Query. Highlights top products, regional performance.</p>
           <a href="https://github.com/Jake-Analyst/Sales-Performance-Dashboard-" target="_blank" class="mt-4 inline-block w-full text-center bg-purple-600 text-white font-semibold py-2 rounded-lg hover:bg-purple-700">View on GitHub</a>
-        </div>
-      </div>
-
-      <!-- JAKE Financial Management System Card -->
-      <div class="bg-white rounded-2xl shadow-lg overflow-hidden border flex flex-col h-full">
-        <div class="h-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600"></div>
-        <div class="h-48 bg-gray-100 flex items-center justify-center p-2">
-          <video 
-            class="w-full h-full object-cover rounded" 
-            controls 
-            muted 
-            preload="none"
-            poster=".images/faith dashboard.jpeg">
-            <source src=".images/faiths%20dashboard.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="p-5 flex flex-col flex-grow">
-          <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full w-fit">💹 Excel + Power Query | Python + Flask + AI</span>
-          <h3 class="text-xl font-bold mt-2">JAKE Financial Management System</h3>
-          <p class="text-gray-600 text-sm mt-1">M‑Pesa analysis & AI financial insights</p>
-          <p class="text-gray-500 text-xs mt-2 flex-grow">Cleaned M‑Pesa data with Excel & Power Query, then built a Python/Flask dashboard with AI (Gemini) for real‑time KPIs.</p>
-          <a href="https://github.com/Jake-Analyst/Personal-Financial-Management-System/tree/main" target="_blank" class="mt-4 inline-block w-full text-center bg-indigo-600 text-white font-semibold py-2 rounded-lg hover:bg-indigo-700">View on GitHub</a>
         </div>
       </div>
     </div>
@@ -327,7 +304,7 @@
           <div class="grid md:grid-cols-2 gap-6">
             <div>
               <img 
-                src=".images/Messy%20Spreadsheet.png" 
+                src="Messy%20Spreadsheet.png" 
                 alt="Messy raw data"
                 loading="lazy"
                 class="rounded-lg w-full zoomable" 
@@ -337,7 +314,7 @@
             </div>
             <div>
               <img 
-                src=".images/Cleaned%20Spreadsheet.png" 
+                src="Cleaned%20Spreadsheet.png" 
                 alt="Cleaned data"
                 loading="lazy"
                 class="rounded-lg w-full zoomable" 
@@ -368,7 +345,7 @@
         </div>
         <div class="p-8">
           <img 
-            src=".images/SQL_tables.png" 
+            src="SQL_tables.png" 
             alt="SQL Schema"
             loading="lazy"
             class="rounded-xl w-full zoomable" 
@@ -395,7 +372,7 @@
         </div>
         <div class="p-8">
           <img 
-            src=".images/HR-Attrition.png" 
+            src="HR-Attrition.png" 
             alt="HR Attrition Dashboard"
             loading="lazy"
             class="rounded-xl w-full zoomable" 
@@ -422,7 +399,7 @@
         </div>
         <div class="p-8">
           <img 
-            src=".images/Sales-Dashboard.png" 
+            src="Sales-Dashboard.png" 
             alt="Sales Dashboard"
             loading="lazy"
             class="rounded-xl w-full zoomable" 
@@ -433,61 +410,6 @@
             This Power BI dashboard provides a clear and interactive view of sales performance across regions, products, and time periods.
           </p>
           <a href="https://github.com/Jake-Analyst/Sales-Performance-Dashboard-" target="_blank" class="mt-4 inline-block bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700">View on GitHub →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- JAKE Financial Management System Detailed Section -->
-  <section id="project-finance" class="bg-gradient-to-br from-indigo-50 to-blue-50 py-20 opacity-0 translate-y-20 transition-all duration-1000 ease-out" data-section>
-    <div class="container mx-auto px-6">
-      <a href="#projects" class="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-semibold mb-8 smooth-scroll">← Back to Projects</a>
-      <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
-        <div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 p-8 text-white">
-          <h2 class="text-3xl font-bold">JAKE Personal Financial Management System</h2>
-          <p class="text-blue-100">AI‑Powered Financial Analytics, Budgeting & Automated Reporting</p>
-        </div>
-        <div class="p-8 flex flex-col gap-6">
-          <div class="cursor-pointer rounded-xl overflow-hidden shadow-lg" onclick="openImage('.images/faith dashboard.jpeg')">
-            <img 
-              src=".images/faith dashboard.jpeg" 
-              alt="Dashboard Preview" 
-              loading="lazy"
-              class="w-full zoomable"
-              onload="this.setAttribute('data-loaded', 'true')">
-          </div>
-          <div class="video-container rounded-xl overflow-hidden shadow-lg" onclick="toggleVideoFullscreen(this.querySelector('video'))">
-            <video 
-              class="w-full" 
-              controls 
-              muted 
-              preload="none"
-              poster=".images/faith dashboard.jpeg">
-              <source src=".images/faiths%20dashboard.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="space-y-4 mt-4">
-            <p class="text-gray-700 leading-relaxed">
-              <strong>Data Preparation & Cleaning:</strong> The raw M‑Pesa statement was first processed using <span class="font-medium">Excel and Power Query</span>.
-            </p>
-            <p class="text-gray-700 leading-relaxed">
-              <strong>System Architecture:</strong> The dashboard was built with <span class="font-medium">Python (Flask)</span> and <span class="font-medium">SQLite</span>.
-            </p>
-            <p class="text-gray-700 leading-relaxed">
-              <strong>AI & Financial Intelligence:</strong> Integrated with <span class="font-medium">Google Gemini</span>, the system provides automated variance analysis.
-            </p>
-            <p class="text-gray-700 font-medium">
-              <span class="inline-block bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full">Python</span>
-              <span class="inline-block bg-indigo-100 text-indigo-700 text-xs px-3 py-1 rounded-full ml-1">Flask</span>
-              <span class="inline-block bg-purple-100 text-purple-700 text-xs px-3 py-1 rounded-full ml-1">Pandas</span>
-              <span class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full ml-1">Excel/ Power Query</span>
-              <span class="inline-block bg-yellow-100 text-yellow-700 text-xs px-3 py-1 rounded-full ml-1">Chart.js</span>
-              <span class="inline-block bg-pink-100 text-pink-700 text-xs px-3 py-1 rounded-full ml-1">Tailwind CSS</span>
-              <span class="inline-block bg-indigo-100 text-indigo-700 text-xs px-3 py-1 rounded-full ml-1">Gemini AI</span>
-            </p>
-            <a href="https://github.com/Jake-Analyst/Personal-Financial-Management-System/tree/main" target="_blank" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700">View on GitHub →</a>
-          </div>
         </div>
       </div>
     </div>
