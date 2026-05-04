@@ -133,7 +133,7 @@
   </script>
 
   <!-- Hero Section -->
-  <div class="relative h-screen bg-[url('.images/hero-image-2.jpg')] bg-cover bg-center opacity-0 translate-y-20 transition-all duration-1000 ease-out" data-section>
+  <div class="relative h-screen bg-[url('/images/hero-image-2.jpg')] bg-cover bg-center opacity-0 translate-y-20 transition-all duration-1000 ease-out" data-section>
     <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
     <section class="relative z-10 py-12 px-6 text-white">
       <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8">
@@ -143,7 +143,7 @@
           <button id="viewCvBtn" class="bg-blue-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-blue-700 transition shadow-lg">📄 View My CV</button>
         </div>
         <div class="flex-1 flex justify-center md:justify-end">
-          <img src=".images/fixed passport image.png" alt="Profile" class="w-full max-w-md aspect-square rounded-full object-cover shadow-2xl zoomable">
+          <img src="/images/fixed passport image.png" alt="Profile" class="w-full max-w-md aspect-square rounded-full object-cover shadow-2xl zoomable">
         </div>
       </div>
     </section>
@@ -151,7 +151,7 @@
 
   <script>
     document.getElementById('viewCvBtn').addEventListener('click', function() {
-      const pdfPath = ".images/Jake%20CV.pdf";
+      const pdfPath = "/images/Jake%20CV.pdf";
       window.open(pdfPath, '_blank');
     });
   </script>
@@ -179,8 +179,8 @@
       <div class="bg-white rounded-2xl shadow-lg overflow-hidden border flex flex-col h-full">
         <div class="h-2 bg-gradient-to-r from-green-400 to-emerald-500"></div>
         <div class="h-48 bg-green-50 flex items-center justify-center gap-1 p-2">
-          <img src=".images/Messy%20Spreadsheet.png" class="w-1/2 h-full object-cover zoomable rounded" onclick="openImage(this.src)">
-          <img src=".images/Cleaned%20Spreadsheet.png" class="w-1/2 h-full object-cover zoomable rounded" onclick="openImage(this.src)">
+          <img src="/images/Messy%20Spreadsheet.png" class="w-1/2 h-full object-cover zoomable rounded" onclick="openImage(this.src)">
+          <img src="/images/Cleaned%20Spreadsheet.png" class="w-1/2 h-full object-cover zoomable rounded" onclick="openImage(this.src)">
         </div>
         <div class="p-5 flex flex-col flex-grow">
           <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full w-fit">📊 Excel + Power Query</span>
@@ -193,7 +193,7 @@
       <!-- SQL Project Card -->
       <div class="bg-white rounded-2xl shadow-lg overflow-hidden border flex flex-col h-full">
         <div class="h-2 bg-gradient-to-r from-blue-400 to-indigo-500"></div>
-        <div class="h-48 bg-blue-50 flex items-center justify-center"><img src=".images/sql-dashboard.png" class="object-contain h-full zoomable" onclick="openImage(this.src)" onerror="this.src='https://placehold.co/600x400?text=SQL+Preview'"></div>
+        <div class="h-48 bg-blue-50 flex items-center justify-center"><img src="/images/sql-dashboard.png" class="object-contain h-full zoomable" onclick="openImage(this.src)" onerror="this.src='https://placehold.co/600x400?text=SQL+Preview'"></div>
         <div class="p-5 flex flex-col flex-grow">
           <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full w-fit">🗄️ SQL</span>
           <h3 class="text-xl font-bold mt-2">SQL‑Driven HR Analytics</h3>
@@ -205,7 +205,7 @@
       <!-- HR Attrition Card -->
       <div class="bg-white rounded-2xl shadow-lg overflow-hidden border flex flex-col h-full">
         <div class="h-2 bg-gradient-to-r from-orange-400 to-red-500"></div>
-        <div class="h-48 bg-orange-50 flex items-center justify-center"><img src=".images/hr-attrition-dashboard.png" class="object-contain h-full zoomable" onclick="openImage(this.src)" onerror="this.src='https://placehold.co/600x400?text=Attrition+Dashboard'"></div>
+        <div class="h-48 bg-orange-50 flex items-center justify-center"><img src="/images/hr-attrition-dashboard.png" class="object-contain h-full zoomable" onclick="openImage(this.src)" onerror="this.src='https://placehold.co/600x400?text=Attrition+Dashboard'"></div>
         <div class="p-5 flex flex-col flex-grow">
           <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full w-fit">📊 Power BI</span>
           <h3 class="text-xl font-bold mt-2">Employee Attrition Dashboard</h3>
@@ -217,7 +217,7 @@
       <!-- Power BI Sales Card -->
       <div class="bg-white rounded-2xl shadow-lg overflow-hidden border flex flex-col h-full">
         <div class="h-2 bg-gradient-to-r from-purple-400 to-pink-500"></div>
-        <div class="h-48 bg-purple-50 flex items-center justify-center"><img src=".images/powerbi-dashboard.png" class="object-contain h-full zoomable" onclick="openImage(this.src)" onerror="this.src='https://placehold.co/600x400?text=Power+BI'"></div>
+        <div class="h-48 bg-purple-50 flex items-center justify-center"><img src="/images/powerbi-dashboard.png" class="object-contain h-full zoomable" onclick="openImage(this.src)" onerror="this.src='https://placehold.co/600x400?text=Power+BI'"></div>
         <div class="p-5 flex flex-col flex-grow">
           <span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full w-fit">📈 Power BI</span>
           <h3 class="text-xl font-bold mt-2">Sales Performance Dashboard</h3>
@@ -226,12 +226,12 @@
         </div>
       </div>
 
-      <!-- JAKE Financial Management System Card (UNCHANGED) -->
+      <!-- JAKE Financial Management System Card -->
       <div class="bg-white rounded-2xl shadow-lg overflow-hidden border flex flex-col h-full">
         <div class="h-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600"></div>
         <div class="h-48 bg-gray-100 flex items-center justify-center p-2">
-          <video class="w-full h-full object-cover rounded" controls muted preload="metadata" poster=".images/faith dashboard.jpeg">
-            <source src=".images/faiths%20dashboard.mp4" type="video/mp4">
+          <video class="w-full h-full object-cover rounded" controls muted preload="metadata" poster="/images/faith dashboard.jpeg">
+            <source src="/images/faiths%20dashboard.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
@@ -246,7 +246,7 @@
     </div>
   </section>
 
-  <!-- DETAILED PROJECT SECTIONS (updated descriptions) -->
+  <!-- DETAILED PROJECT SECTIONS -->
 
   <!-- Excel Project Detail -->
   <section id="project-excel" class="bg-gradient-to-br from-green-50 to-emerald-50 py-20 opacity-0 translate-y-20 transition-all duration-1000 ease-out" data-section>
@@ -259,10 +259,9 @@
         </div>
         <div class="p-8 bg-gray-50">
           <div class="grid md:grid-cols-2 gap-6">
-            <div><img src=".images/Messy%20Spreadsheet.png" class="rounded-lg w-full zoomable" onclick="openImage(this.src)"><p class="text-center mt-2 text-red-600">⚠️ Messy raw data</p></div>
-            <div><img src=".images/Cleaned%20Spreadsheet.png" class="rounded-lg w-full zoomable" onclick="openImage(this.src)"><p class="text-center mt-2 text-green-600">✅ Cleaned data</p></div>
+            <div><img src="/images/Messy%20Spreadsheet.png" class="rounded-lg w-full zoomable" onclick="openImage(this.src)"><p class="text-center mt-2 text-red-600">⚠️ Messy raw data</p></div>
+            <div><img src="/images/Cleaned%20Spreadsheet.png" class="rounded-lg w-full zoomable" onclick="openImage(this.src)"><p class="text-center mt-2 text-green-600">✅ Cleaned data</p></div>
           </div>
-          <!-- NEW Detailed Description for Excel -->
           <p class="mt-6 text-gray-700 leading-relaxed">
             This project presents an end-to-end personal finance analytics workflow built in Excel using an M‑Pesa statement as the source of raw transaction data. The statement was transformed from an unstructured file into a clean, analysis‑ready dataset using Power Query and data standardization techniques. The dashboard was designed to reveal spending patterns, income trends, and cash flow behavior through interactive visuals and KPI cards. It demonstrates strong Excel‑based data cleaning, transformation, and visualization skills while turning financial records into practical decision‑making insights.
           </p>
@@ -282,8 +281,7 @@
           <p class="text-blue-100">Advanced Database Analysis</p>
         </div>
         <div class="p-8">
-          <img src=".images/SQL_tables.png" class="rounded-xl w-full zoomable" onclick="openImage(this.src)" onerror="this.src='https://placehold.co/900x500?text=SQL+Schema'">
-          <!-- NEW Detailed Description for SQL -->
+          <img src="/images/SQL_tables.png" class="rounded-xl w-full zoomable" onclick="openImage(this.src)" onerror="this.src='https://placehold.co/900x500?text=SQL+Schema'">
           <p class="mt-6 text-gray-700 leading-relaxed">
             This project is an SQL‑based human resources analytics solution designed to uncover patterns in salary, gender, department, and age distribution across an organization. By combining employee salary and demographic tables, the analysis explores pay differences, workforce composition, and compensation trends. The queries identify high‑paying departments, top earners, gender pay gaps, and age group patterns using SQL functions such as JOIN, AVG, CASE WHEN, and GROUP BY. The project demonstrates how raw HR data can be transformed into meaningful insights that support fairer and more informed workforce decisions.
           </p>
@@ -303,8 +301,7 @@
           <p class="text-orange-100">Workforce Retention & Predictive Analytics</p>
         </div>
         <div class="p-8">
-          <img src=".images/HR-Attrition.png" class="rounded-xl w-full zoomable" onclick="openImage(this.src)" onerror="this.src='https://placehold.co/1000x600?text=Attrition+Dashboard'">
-          <!-- NEW Detailed Description for Attrition -->
+          <img src="/images/HR-Attrition.png" class="rounded-xl w-full zoomable" onclick="openImage(this.src)" onerror="this.src='https://placehold.co/1000x600?text=Attrition+Dashboard'">
           <p class="mt-6 text-gray-700 leading-relaxed">
             This project is an HR analytics dashboard built with Excel and Power BI to analyze employee attrition and the factors influencing turnover. It uses a public Kaggle HR dataset and follows a complete workflow from data cleaning and transformation to dashboard design and insight generation. The dashboard examines attrition by department, gender, marital status, income, overtime, and job satisfaction to help HR teams understand retention challenges. It provides actionable insights that support proactive employee retention strategies and better workforce planning.
           </p>
@@ -324,8 +321,7 @@
           <p class="text-purple-100">Power BI Business Intelligence</p>
         </div>
         <div class="p-8">
-          <img src=".images/Sales-Dashboard.png" class="rounded-xl w-full zoomable" onclick="openImage(this.src)" onerror="this.src='https://placehold.co/1000x600?text=Sales+Dashboard'">
-          <!-- NEW Detailed Description for Sales -->
+          <img src="/images/Sales-Dashboard.png" class="rounded-xl w-full zoomable" onclick="openImage(this.src)" onerror="this.src='https://placehold.co/1000x600?text=Sales+Dashboard'">
           <p class="mt-6 text-gray-700 leading-relaxed">
             This Power BI dashboard provides a clear and interactive view of sales performance across regions, products, and time periods. The project brings together sales data from Excel files, cleans it using Power Query, and models relationships between the key tables to support accurate analysis. It highlights important trends such as top‑performing regions, product growth, seasonal peaks, and profitability patterns. The final result is a decision‑support dashboard that helps management track sales performance and identify growth opportunities more effectively.
           </p>
@@ -335,7 +331,7 @@
     </div>
   </section>
 
-  <!-- JAKE Financial Management System Detailed Section (UNCHANGED) -->
+  <!-- JAKE Financial Management System Detailed Section -->
   <section id="project-finance" class="bg-gradient-to-br from-indigo-50 to-blue-50 py-20 opacity-0 translate-y-20 transition-all duration-1000 ease-out" data-section>
     <div class="container mx-auto px-6">
       <a href="#projects" class="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-semibold mb-8 smooth-scroll">← Back to Projects</a>
@@ -345,12 +341,12 @@
           <p class="text-blue-100">AI‑Powered Financial Analytics, Budgeting & Automated Reporting</p>
         </div>
         <div class="p-8 flex flex-col gap-6">
-          <div class="cursor-pointer rounded-xl overflow-hidden shadow-lg" onclick="openImage('.images/faith dashboard.jpeg')">
-            <img src=".images/faith dashboard.jpeg" alt="Dashboard Preview" class="w-full zoomable">
+          <div class="cursor-pointer rounded-xl overflow-hidden shadow-lg" onclick="openImage('/images/faith dashboard.jpeg')">
+            <img src="/images/faith dashboard.jpeg" alt="Dashboard Preview" class="w-full zoomable">
           </div>
           <div class="video-container rounded-xl overflow-hidden shadow-lg" onclick="toggleVideoFullscreen(this.querySelector('video'))">
-            <video class="w-full" controls muted preload="metadata" poster=".images/faith dashboard.jpeg">
-              <source src=".images/faiths%20dashboard.mp4" type="video/mp4">
+            <video class="w-full" controls muted preload="metadata" poster="/images/faith dashboard.jpeg">
+              <source src="/images/faiths%20dashboard.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
