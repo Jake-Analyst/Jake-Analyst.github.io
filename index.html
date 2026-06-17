@@ -25,6 +25,7 @@
             background-color: var(--cream);
             color: var(--ink);
             font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
         }
 
         .font-heading { font-weight: 800; }
@@ -69,8 +70,7 @@
             border-radius: 50%;
             overflow: hidden;
             flex-shrink: 0;
-            margin-top: -60px;
-            margin-left: -30px;
+            transform: translate(-30px, -60px);
         }
         .profile-circle img {
             width: 100%;
@@ -123,6 +123,12 @@
             top: 0; left: 0;
             width: 100%; height: 100%;
         }
+        .project-image > img {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
 
         .slider-slides {
             display: flex;
@@ -144,6 +150,7 @@
             height: 100%;
             object-fit: cover;
             background: #fff;
+            max-width: 100%;
         }
         .slide-label {
             position: absolute;
@@ -156,6 +163,7 @@
             font-size: 14px;
             font-weight: 600;
             pointer-events: none;
+            max-width: calc(100% - 20px);
         }
 
         .slider-dots {
@@ -209,8 +217,7 @@
             .profile-circle {
                 width: 200px;
                 height: 200px;
-                margin-top: 0;
-                margin-left: 0;
+                transform: none;
             }
         }
     </style>
@@ -232,7 +239,7 @@
 </header>
 
 <!-- ========== HERO ========== -->
-<section class="relative min-h-screen flex items-center bg-black text-white">
+<section class="relative min-h-screen flex items-center bg-black text-white overflow-hidden">
     <div class="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
              alt="Data analytics" class="w-full h-full object-cover opacity-60">
@@ -259,7 +266,7 @@
                     <div><div class="text-3xl font-bold text-earth"><span class="countup" data-target="100">0</span>%</div><div class="text-xs font-semibold text-white/70">Client Satisfaction</div></div>
                 </div>
             </div>
-            <div class="profile-circle">
+            <div class="profile-circle flex-shrink-0">
                 <img src="images/Passport.png" alt="Jacob Muuo Portrait">
             </div>
         </div>
@@ -267,7 +274,7 @@
 </section>
 
 <!-- ========== PROJECTS ========== -->
-<section id="projects" class="bg-cream py-24">
+<section id="projects" class="bg-cream py-24 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
         <span class="text-earth text-xs font-semibold uppercase tracking-[0.18em]">Portfolio</span>
         <h2 class="font-heading text-4xl md:text-5xl font-bold text-forest mt-3 mb-4">Featured Projects</h2>
@@ -290,13 +297,13 @@
                             </div>
                             <div class="slider-slide">
                                 <video autoplay muted loop preload="auto" poster="https://via.placeholder.com/1600x900/333/fff?text=Python+Code">
-                                    <source src="images/python-datacleaning-code .mp4" type="video/mp4">
+                                    <source src="python-datacleaning-code .mp4" type="video/mp4">
                                 </video>
                                 <span class="slide-label">Python Code for Cleaning the Data</span>
                             </div>
                             <div class="slider-slide">
                                 <video autoplay muted loop preload="auto" poster="https://via.placeholder.com/1600x900/333/fff?text=Cleaned+Data">
-                                    <source src="images/cleaned-data.mp4" type="video/mp4">
+                                    <source src="cleaned-data.mp4" type="video/mp4">
                                 </video>
                                 <span class="slide-label">Cleaned Data</span>
                             </div>
@@ -346,7 +353,7 @@
                         <div class="slider-slides">
                             <div class="slider-slide">
                                 <video autoplay muted loop preload="auto" poster="https://via.placeholder.com/1600x900/333/fff?text=Clean+Finance+Data">
-                                    <source src="images/Personal Finance Clean.mp4" type="video/mp4">
+                                    <source src="Personal Finance Clean.mp4" type="video/mp4">
                                 </video>
                                 <span class="slide-label">Clean Personal Finance Data</span>
                             </div>
@@ -389,14 +396,14 @@
                 </div>
             </div>
 
-            <!-- ===== PROJECT 3 ===== -->
+            <!-- ===== PROJECT 3 – JAKE Financial ===== -->
             <div class="project-card">
                 <div class="project-image">
                     <div class="slider-container" id="slider3">
                         <div class="slider-slides">
                             <div class="slider-slide">
                                 <video controls muted loop preload="auto" poster="https://via.placeholder.com/1600x900/333/fff?text=Financial+System+Demo">
-                                    <source src="images/Financial Mangement System.mp4" type="video/mp4">
+                                    <source src="Financial Mangement System.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <span class="slide-label">Financial Management System Demo</span>
@@ -440,43 +447,39 @@
                 </div>
             </div>
 
-            <!-- ===== PROJECT 4 ===== -->
+            <!-- ===== PROJECT 4 – Employee Attrition ===== -->
             <div class="project-card">
                 <div class="project-image">
-                    <div class="slider-container" id="slider4">
-                        <div class="slider-slides">
-                            <div class="slider-slide"><img src="https://via.placeholder.com/1600x900/1a1a1a/ffffff?text=Gain+Importance+Chart" alt="Gain importance"><span class="slide-label">Gain Importance (XGBoost)</span></div>
-                            <div class="slider-slide"><img src="https://via.placeholder.com/1600x900/1a3b32/ffffff?text=Permutation+Importance" alt="Permutation"><span class="slide-label">Permutation Importance</span></div>
-                            <div class="slider-slide"><img src="https://via.placeholder.com/1600x900/b65f28/ffffff?text=May+vs+August+Comparison" alt="May vs August"><span class="slide-label">May vs August Revenue</span></div>
-                            <div class="slider-slide"><img src="https://via.placeholder.com/1600x900/5a554b/ffffff?text=Actionable+Recommendations" alt="Recommendations"><span class="slide-label">Actionable Recommendations</span></div>
-                            <div class="slider-slide">
-                                <video controls muted loop preload="none" poster="https://via.placeholder.com/1600x900/333/fff?text=Feature+Importance+Walkthrough">
-                                    <source src="demo-feature-importance.mp4" type="video/mp4">
-                                </video>
-                                <span class="slide-label">Analysis Walkthrough</span>
-                            </div>
-                        </div>
-                        <button class="slider-prev">&#10094;</button>
-                        <button class="slider-next">&#10095;</button>
-                        <div class="slider-dots" id="slider4-dots"></div>
-                    </div>
+                    <img src="Employee-Attrition-Analysis.png" alt="Employee Attrition Dashboard">
                 </div>
                 <div class="p-8">
                     <div class="flex flex-wrap items-center gap-3 mb-2">
-                        <span class="bg-earth/10 text-earth text-xs font-bold px-3 py-1 rounded-full">Model Interpretation</span>
-                        <span class="bg-forest/10 text-forest text-xs font-bold px-3 py-1 rounded-full">Scikit-learn</span>
-                        <span class="bg-forest/10 text-forest text-xs font-bold px-3 py-1 rounded-full">Matplotlib</span>
+                        <span class="bg-earth/10 text-earth text-xs font-bold px-3 py-1 rounded-full">HR Analytics</span>
+                        <span class="bg-forest/10 text-forest text-xs font-bold px-3 py-1 rounded-full">Excel</span>
+                        <span class="bg-forest/10 text-forest text-xs font-bold px-3 py-1 rounded-full">Power BI</span>
+                        <span class="bg-forest/10 text-forest text-xs font-bold px-3 py-1 rounded-full">Dashboard</span>
                     </div>
-                    <h3 class="text-2xl font-bold text-forest mt-3">Feature Importance & Revenue Driver Analysis</h3>
-                    <p class="text-muted mt-3 leading-relaxed">Used <strong>permutation importance</strong> and XGBoost's built-in gain metric to identify the top drivers of daily revenue. Discovered that <strong>Supply Volume, Market location, and Zebu classification</strong> were the strongest predictors — enabling targeted August strategies.</p>
+                    <h3 class="text-2xl font-bold text-forest mt-3">Employee Attrition Analysis &amp; Retention Strategy</h3>
+                    <p class="text-muted mt-3 leading-relaxed">
+                        <strong>Overview:</strong> A data‑driven investigation into the key drivers of employee turnover using a public HR dataset, with the goal of helping HR teams transition from reactive to proactive retention strategies.
+                    </p>
                     <ul class="mt-4 space-y-2 text-sm text-muted">
-                        <li class="flex items-start gap-2"><span class="text-earth font-bold mt-0.5">▸</span>Ranked features by both Gain and Permutation Importance; aligned findings with dashboard metrics.</li>
-                        <li class="flex items-start gap-2"><span class="text-earth font-bold mt-0.5">▸</span>Generated side-by-side comparison of May spike drivers vs. baseline months.</li>
-                        <li class="flex items-start gap-2"><span class="text-earth font-bold mt-0.5">▸</span>Provided actionable recommendation: replicate Butere + Zebu + Grade 3 in August to maximize revenue.</li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-earth font-bold mt-0.5">▸</span>
+                            <strong>Problem:</strong> Rising employee attrition was increasing recruitment costs and reducing productivity. The HR department lacked a clear picture of which departments, demographics, and income brackets were most affected, making it impossible to design targeted interventions.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-earth font-bold mt-0.5">▸</span>
+                            <strong>Solution:</strong> Cleaned and standardized a Kaggle HR dataset in Excel, then built an interactive Power BI dashboard with KPIs, department‑wise attrition visuals, and income‑vs‑satisfaction analysis. The dashboard visualised total employees, attrition rate, average tenure, overtime percentage, and average monthly income.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-earth font-bold mt-0.5">▸</span>
+                            <strong>Impact:</strong> Identified Sales and R&D as the highest‑attrition departments, revealed that low income and job satisfaction were strong turnover predictors, and found that married employees and males exhibited higher attrition rates. Recommended salary restructuring, targeted retention programmes, and continuous KPI monitoring to cut attrition and save costs.
+                        </li>
                     </ul>
                     <div class="mt-6 flex gap-4">
-                        <a href="#" class="text-sm font-semibold text-earth hover:underline">View Full Analysis →</a>
-                        <a href="#" class="text-sm font-semibold text-forest hover:underline">See Charts →</a>
+                        <a href="#" class="text-sm font-semibold text-earth hover:underline">View Full Dashboard →</a>
+                        <a href="#" class="text-sm font-semibold text-forest hover:underline">GitHub Repo →</a>
                     </div>
                 </div>
             </div>
@@ -486,7 +489,7 @@
 </section>
 
 <!-- ========== SKILLS ========== -->
-<section id="skills" class="bg-white py-24">
+<section id="skills" class="bg-white py-24 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
         <span class="text-earth text-xs font-semibold uppercase tracking-[0.18em]">Skills & Expertise</span>
         <h2 class="font-heading text-4xl md:text-5xl font-bold text-forest mt-3 mb-12">Technical Skills</h2>
@@ -516,7 +519,7 @@
 </section>
 
 <!-- ========== TECH STACK ========== -->
-<section class="bg-forest py-24 text-white">
+<section class="bg-forest py-24 text-white overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
         <span class="text-gold text-xs font-semibold uppercase tracking-[0.18em]">Tech Stack</span>
         <h2 class="font-heading text-4xl md:text-5xl font-bold mt-3 mb-12">Tools &amp; Technologies</h2>
@@ -541,7 +544,7 @@
 </section>
 
 <!-- ========== CTA ========== -->
-<section id="contact" class="relative py-24 bg-black">
+<section id="contact" class="relative py-24 bg-black overflow-hidden">
     <div class="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1521737711867-4d5f1d79c0c4?w=1920" alt="" class="w-full h-full object-cover opacity-40">
         <div class="absolute inset-0 bg-black/70"></div>
@@ -556,14 +559,14 @@
         </p>
         <div class="flex flex-wrap justify-center gap-4">
             <a href="https://wa.me/254793752735" target="_blank" rel="noopener noreferrer" class="bg-earth text-white px-8 py-4 rounded-full font-semibold hover:bg-earth/80 transition">💬 WhatsApp</a>
-            <a href="https://www.linkedin.com/in/jacob-muuo-a70aa5371/" target="_blank" rel="noopener noreferrer" class="border border-white/40 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition">🔗 LinkedIn</a>
+            <a href="https://www.linkedin.com/in/jacob-muuo-b48738388/" target="_blank" rel="noopener noreferrer" class="border border-white/40 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition">🔗 LinkedIn</a>
             <a href="mailto:jmuuo7990@gmail.com" class="bg-cream text-forest px-8 py-4 rounded-full font-semibold hover:bg-white transition">📧 Email Me</a>
         </div>
     </div>
 </section>
 
 <!-- ========== FOOTER ========== -->
-<footer class="bg-forest text-white/60 py-12">
+<footer class="bg-forest text-white/60 py-12 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
             <h3 class="text-lg font-bold text-white mb-3">Jacob Muuo</h3>
@@ -581,7 +584,7 @@
         <div>
             <h4 class="font-bold text-white mb-3">Connect</h4>
             <div class="flex gap-4">
-                <a href="https://www.linkedin.com/in/jacob-muuo-a70aa5371/" target="_blank" rel="noopener noreferrer" class="hover:text-earth">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/jacob-muuo-b48738388/" target="_blank" rel="noopener noreferrer" class="hover:text-earth">LinkedIn</a>
                 <a href="https://wa.me/254793752735" target="_blank" rel="noopener noreferrer" class="hover:text-earth">WhatsApp</a>
                 <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="hover:text-earth">GitHub</a>
             </div>
@@ -695,7 +698,7 @@
         if (e.key === 'ArrowRight') navigateLightbox(1);
     });
 
-    // Sliders – 10-second interval, video-aware
+    // Sliders – only those that exist will be initialised
     function initSlider(sliderId) {
         const container = document.getElementById(sliderId);
         if (!container) return;
@@ -783,7 +786,7 @@
     }
 
     window.addEventListener('load', () => {
-        for (let i = 1; i <= 4; i++) {
+        for (let i = 1; i <= 3; i++) {
             initSlider('slider' + i);
         }
     });
